@@ -1,8 +1,29 @@
 # gits-cli
 
-```
 Bulk git wrapper for multi-repo workspaces
 
+## Install
+
+- From crates.io (recommended):
+  - `cargo install gits-cli` (installs the `gits` binary)
+- From Git (latest main):
+  - `cargo install --git https://github.com/efJerryYang/gits`
+- From local checkout:
+  - `cargo install --path .`
+
+## Quick Start
+
+Examples:
+
+```
+gits status -sb
+gits status
+gits checkout -b branch-for-all-packages
+```
+
+Usage: 
+
+```
 Usage: gits [OPTIONS] [GIT_ARGS]...
 
 Arguments:
@@ -20,3 +41,4 @@ Options:
   -h, --help                           Print help
   -V, --version                        Print version
 ```
+
