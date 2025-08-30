@@ -278,22 +278,24 @@ fn main() -> io::Result<()> {
         }
     };
 
-    let mut last_code = 0i32;
+    let mut last_nonzero: Option<i32> = None;
     for (idx, repo) in repos.iter().enumerate() {
         if print_headings {
             let head = heading_for(repo, &root, cli.absolute_path);
             print_heading(idx, repos.len(), &head, cli.heading_style, use_color);
         }
         let code = run_git_in(repo, &git_args)?;
-        last_code = code;
+        if code != 0 {
+            last_nonzero = Some(code);
+        }
         if print_headings {
             print_fence(cli.heading_style, use_color);
         }
     }
 
-    // Propagate a failing exit code if any
-    if last_code != 0 {
-        std::process::exit(last_code);
+    // Propagate a failing exit code if any (default strict)
+    if let Some(code) = last_nonzero {
+        std::process::exit(code);
     }
     Ok(())
 }

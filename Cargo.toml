@@ -1,9 +1,19 @@
 [package]
-name = "gits"
+name = "gits-cli"
 version = "0.1.0"
 edition = "2021"
+description = "Bulk git wrapper for multi-repo workspaces. Run one git command across many repos with preserved colors and interactivity."
+readme = "README.md"
+license = "MIT"
+repository = "https://github.com/efJerryYang/gits"
+keywords = ["git", "workspace", "monorepo", "cli"]
+
+[[bin]]
+name = "gits"
+path = "src/main.rs"
 
 [dependencies]
-clap = { version = "4.5.46", features = ["derive"] }
-pathdiff = "0.2.3"
-terminal_size = "0.4.3"
+clap = { version = "4.5", features = ["derive"] }
+pathdiff = "0.2"
+terminal_size = "0.4"
+
