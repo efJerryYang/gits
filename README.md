@@ -1,4 +1,4 @@
-# Bulk git wrapper for multi-repo workspaces
+# gits-cli
 
 ```
 Bulk git wrapper for multi-repo workspaces
