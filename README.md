@@ -4,12 +4,23 @@ Bulk git wrapper for multi-repo workspaces
 
 ## Install
 
-- From crates.io (recommended):
-  - `cargo install gits-cli` (installs the `gits` binary)
-- From Git (latest main):
-  - `cargo install --git https://github.com/efJerryYang/gits`
-- From local checkout:
-  - `cargo install --path .`
+From crates.io (recommended):
+
+```
+cargo install gits-cli # installs the `gits` binary
+```
+
+From git branch:
+
+```
+cargo install --git https://github.com/efJerryYang/gits --branch main # or --tag v0.1.0
+```
+
+From local checkout:
+
+```
+cargo install --path .
+```
 
 ## Quick Start
 
